@@ -1,0 +1,26 @@
+services:
+
+  postgres:
+    image: "postgres:latest"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - "pgdata:/var/lib/postgresql/data"
+    restart: always
+
+  site:
+    build:
+      context: .
+      dockerfile: docker/website.Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: "postgres://postgres:postgres@postgres:5432/postgres"
+
+    ports:
+      - "3000:3000"
+
+
+volumes:
+  pgdata:

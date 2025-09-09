@@ -1,0 +1,37 @@
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  input, textarea {
+    background: transparent;
+    border-style: dashed;
+    padding: 0.5em;
+    font: inherit;
+    outline: none;
+    &:focus {
+      border-color: #e7e7e7;
+    }
+  }
+  input {
+    color: #e986ae;
+  }
+  textarea {
+    resize: none;
+    color: #e7e7e7;
+  }
+  button {
+    font: inherit;
+    background-color: #6ac3f2;
+    border: none;
+    padding: 0.5em;
+  }
+  button:disabled {
+    background-color: #648c9c;
+    color: #151516;
+  }
+}
+
+.error {
+  color: crimson;
+  font-size: 10pt;
+}
