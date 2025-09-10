@@ -10,7 +10,7 @@ const Submission = z.object({
 
 export const getMessages = query(()=> {
     "use server"
-    return prisma.post.findMany({take: 20, orderBy: { id: 'desc'}, where: {visible: true}});
+    return prisma.post.findMany({take: 20, orderBy: { id: 'asc'}, where: {visible: true}});
 }, "getPosts")
 
 export const saveMessage = action(async (formData: FormData) => {
