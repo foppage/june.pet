@@ -20,6 +20,8 @@ services:
       - postgres
     environment:
       DATABASE_URL: "postgres://postgres:postgres@postgres:5432/postgres"
+    env_file:
+      - "./.env"
     hostname: "website"
     networks:
       - default
