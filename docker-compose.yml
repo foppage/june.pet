@@ -6,10 +6,10 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     volumes:
-      - "pgdata:/var/lib/postgresql/data"
+      - "june-pgdata:/var/lib/postgresql/data"
     restart: always
-    ports:
-      - "5432:5432"
+    networks:
+      - default
 
 
   site:
@@ -20,9 +20,10 @@ services:
       - postgres
     environment:
       DATABASE_URL: "postgres://postgres:postgres@postgres:5432/postgres"
-
-    ports:
-      - "3000:3000"
+    hostname: "website"
+    networks:
+      - default
+      - nginx_network
 
   admin:
     build:
@@ -32,9 +33,14 @@ services:
       - postgres
     environment:
       DATABASE_URL: "postgres://postgres:postgres@postgres:5432/postgres"
-
-    ports:
-      - "3001:3000"
+    hostname: "admin"
+    networks:
+      - default
+      - nginx_network
 
 volumes:
-  pgdata:
+  june-pgdata:
+
+networks:
+  nginx_network:
+    external: true
