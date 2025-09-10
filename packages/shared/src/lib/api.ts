@@ -1,6 +1,7 @@
 import {prisma} from "./db";
 import {action, query} from "@solidjs/router";
 import * as z from 'zod'
+import {notify} from "./pushover";
 
 const Submission = z.object({
     author: z.string().max(25).min(2),
@@ -27,6 +28,8 @@ export const saveMessage = action(async (formData: FormData) => {
     await prisma.post.create({
         data: parsed.data
     })
+
+    await notify(parsed.data.author, parsed.data.content)
 
     return {success: true}
 
