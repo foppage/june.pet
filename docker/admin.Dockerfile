@@ -6,15 +6,15 @@ COPY ./package*.json ./
 COPY ./prisma ./prisma
 
 COPY ./packages/shared/ ./packages/shared
-COPY ./packages/site/ ./packages/site
+COPY ./packages/admin/ ./packages/admin
 
 RUN npm ci
 
 RUN npx prisma generate
 
-RUN npm run build --workspace=packages/site
+RUN npm run build --workspace=packages/admin
 
-WORKDIR ./packages/site
+WORKDIR ./packages/admin
 
 EXPOSE 3000
 
