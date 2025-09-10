@@ -6,7 +6,7 @@
 
 generator client {
   provider     = "prisma-client"
-  output       = "../src/generated/prisma"
+  output       = "../packages/shared/src/generated/prisma"
   moduleFormat = "esm"
 }
 
@@ -18,6 +18,8 @@ datasource db {
 model Post {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
+  visible   Boolean  @default(false)
+  handled   Boolean  @default(false)
   author    String
   content   String
 }

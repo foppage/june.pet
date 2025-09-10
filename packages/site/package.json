@@ -1,5 +1,5 @@
 {
-  "name": "example-bare",
+  "name": "site",
   "type": "module",
   "scripts": {
     "dev": "vinxi dev",

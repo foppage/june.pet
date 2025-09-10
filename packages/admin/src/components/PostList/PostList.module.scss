@@ -1,0 +1,23 @@
+.table {
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  th, td{
+    padding: 0.5em;
+    padding-right: 1em;
+  }
+  tr {
+    &:hover {
+      background-color: #202020;
+    }
+  }
+}
+
+.body {
+  color: #e7e7e7;
+}
+
+.header {
+  color: #6ac3f2;
+  text-align: left;
+}

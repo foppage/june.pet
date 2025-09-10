@@ -1,6 +1,6 @@
-import {Component, For, Show, Suspense} from "solid-js";
-import {getMessages, saveMessage} from "~/lib/api";
-import {createAsync, createAsyncStore, revalidate} from "@solidjs/router";
+import {Component, Suspense} from "solid-js";
+import {getMessages} from "shared/src/lib/api";
+import {createAsync} from "@solidjs/router";
 import styles from './Guestbook.module.scss'
 import {GuestbookForm} from "~/components/GuestbookForm/GuestbookForm";
 

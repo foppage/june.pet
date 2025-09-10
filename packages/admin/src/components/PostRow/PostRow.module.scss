@@ -1,0 +1,24 @@
+.button {
+  font: inherit;
+  border: none;
+  padding: 0.5em;
+
+  &.red {
+    background-color: lightcoral;
+    color: #151516;
+  }
+
+}
+
+.blue {
+  color: #6ac3f2;
+}
+
+.green {
+  color: greenyellow;
+}
+
+.red {
+  color: tomato;
+}
+

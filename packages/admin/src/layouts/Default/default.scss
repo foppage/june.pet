@@ -1,0 +1,14 @@
+@import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+
+:root {
+  --color-bg: #151516;
+  --color-blue: #6ac3f2;
+  --color-pink: #e986ae;
+  --color-text: #e7e7e7;
+}
+
+html {
+  font-family: "Fira Code VF", monospace;
+  scroll-behavior: smooth;
+  background: var(--color-bg);
+}

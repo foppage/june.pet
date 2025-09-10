@@ -1,4 +1,4 @@
-import {prisma} from "~/lib/db";
+import {prisma} from "./db";
 import {action, query} from "@solidjs/router";
 import * as z from 'zod'
 
@@ -9,8 +9,8 @@ const Submission = z.object({
 
 export const getMessages = query(()=> {
     "use server"
-    return prisma.post.findMany({take: 10, orderBy: { id: 'desc'}});
-}, "getMessages")
+    return prisma.post.findMany({take: 10, orderBy: { id: 'desc'}, where: {visible: true}});
+}, "getPosts")
 
 export const saveMessage = action(async (formData: FormData) => {
     "use server"
@@ -28,4 +28,6 @@ export const saveMessage = action(async (formData: FormData) => {
         data: parsed.data
     })
 
-}, "saveMessage");
+    return {success: true}
+
+}, "savePost");
