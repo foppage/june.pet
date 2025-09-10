@@ -12,7 +12,7 @@ jobs:
         service:
           - website
           - admin
-          -
+
     permissions:
       contents: read
       packages: write
