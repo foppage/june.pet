@@ -14,7 +14,7 @@ export const Guestbook: Component = () => {
                 <h3 class={"text-blue"}>Guestbook</h3>
                 <div class={styles.messages}>
                     <Suspense>
-                        {messages()?.toSorted((a, b) => a.createdAt.valueOf() - b.createdAt.valueOf()).map(message => (
+                        {messages()?.toSorted((a, b) => b.createdAt.valueOf() - a.createdAt.valueOf()).map(message => (
                             <div><span class={styles.author}>{message.author}</span>: {message.content}</div>
                         ))}
                     </Suspense>
