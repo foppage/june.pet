@@ -4,10 +4,9 @@ import styles from  './Webring.module.scss'
 export const Webring: Component = () => {
     return (
         <>
-            <hr class={styles.hr}/>
-            <div id="webring">
+            <div id="webring" class={styles.webring}>
                 <a href="https://azurahori.zone">&lt;&lt; azurahori.zone</a> - <a
-                href="https://zudo.space">zudo.space &gt;&gt;</a>
+                href="https://isabelle.gg">isabelle.gg &gt;&gt;</a>
             </div>
         </>
 

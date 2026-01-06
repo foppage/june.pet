@@ -6,6 +6,7 @@ import {Projects} from "~/components/Projects/Projects";
 import {Guestbook} from "~/components/Guestbook/Guestbook";
 
 import styles from "./Index.module.scss"
+import {Badges} from "~/components/Badges/Badges";
 
 export const Index: Component = () => (
     <>
@@ -21,6 +22,9 @@ export const Index: Component = () => (
             <Guestbook></Guestbook>
         </div>
 
+        <hr />
         <Webring></Webring>
+
+        <Badges></Badges>
     </>
 )

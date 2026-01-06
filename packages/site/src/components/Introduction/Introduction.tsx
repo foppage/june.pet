@@ -9,8 +9,8 @@ export const Introduction: Component = () => {
                 <li>british</li>
                 <li>non binary (they/she)</li>
                 <li>software developer</li>
-                <li>master's student (computer science)</li>
                 <li>guitarist</li>
+                <li>rental karting enjoyer</li>
                 <li>tetr.io and rocket league enjoyer</li>
                 <li>lead and developer @ <a href="https://lightningarena.com">lightning arena</a></li>
             </ul>

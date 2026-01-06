@@ -22,7 +22,7 @@ const config: runtime.GetPrismaClientConfig = {
       "value": "prisma-client"
     },
     "output": {
-      "value": "C:\\Users\\June\\WebstormProjects\\june.pet-2\\packages\\shared\\src\\generated\\prisma",
+      "value": "C:\\Users\\June\\WebstormProjects\\june.pet\\packages\\shared\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -37,7 +37,7 @@ const config: runtime.GetPrismaClientConfig = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\June\\WebstormProjects\\june.pet-2\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\June\\WebstormProjects\\june.pet\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativePath": "../../../../../prisma",
