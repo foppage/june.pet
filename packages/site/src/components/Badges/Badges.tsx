@@ -32,6 +32,11 @@ const badges: Badge[] = [
         link: "https://aspyn.gay/",
         src: "https://aspyn.gay/88x31.gif",
         title: "aspyn.gay"
+    },
+    { // maia
+        link: "https://maia.crimew.gay/",
+        src: "https://maia.crimew.gay/badges/maia.crimew.gay.png",
+        title: "maia.crimew.gay"
     }
 ]
 
