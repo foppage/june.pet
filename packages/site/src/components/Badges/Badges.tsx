@@ -9,7 +9,7 @@ type Badge = {
 
 const badges: Badge[] = [
     { // me
-        link: "https://june.pet",
+        link: "https://june.pet/",
         src: "https://files.june.pet/88x31.png",
         title: "add me to your website if we're chill"
     },
@@ -19,7 +19,7 @@ const badges: Badge[] = [
         title: "versary.town",
     },
     { // chloe
-        link: "https://sapphic.moe",
+        link: "https://sapphic.moe/",
         src: "https://sapphic.moe/buttons/sapphic.png",
         title: "sapphic.moe"
     },
@@ -27,6 +27,11 @@ const badges: Badge[] = [
         link: "https://wamwoowam.co.uk/",
         src: "https://wamwoowam.co.uk/88x31.png",
         title: "Wam's site",
+    },
+    { // aspyn
+        link: "https://aspyn.gay/",
+        src: "https://aspyn.gay/88x31.gif",
+        title: "aspyn.gay"
     }
 ]
 
