@@ -18,6 +18,9 @@
   }
 
   .messages {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
     overflow-wrap: break-word;
     overflow: scroll;
     height: 15em;

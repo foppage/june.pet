@@ -30,7 +30,11 @@ export const saveMessage = action(async (formData: FormData) => {
         data: parsed.data
     })
 
-    await notify(parsed.data.author, parsed.data.content)
+    try{
+        await notify(parsed.data.author, parsed.data.content)
+    } catch (e) {
+        console.error(`couldn't notify.\nAuthor: ${parsed.data.author}\nContent: ${parsed.data.content}`)
+    }
 
     return {success: true}
 
