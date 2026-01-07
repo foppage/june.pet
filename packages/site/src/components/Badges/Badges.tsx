@@ -46,7 +46,7 @@ export const Badges: Component = () => {
     <For each={badges}>
         {badge =>
             <a href={badge.link} class={styles.badge}>
-                <img src={badge.src} width="88" height="31" title={badge.title} alt={"88x31 badge linking to " + badge.link} />
+                <img class={styles.image} src={badge.src} width="88" height="31" title={badge.title} alt={"88x31 badge linking to " + badge.link} />
             </a>
         }
     </For>
