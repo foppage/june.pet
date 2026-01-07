@@ -4,7 +4,7 @@ import styles from './Badges.module.scss';
 type Badge = {
     link: string,
     src: string,
-    title?: string,
+    title?: string
 }
 
 const badges: Badge[] = [
