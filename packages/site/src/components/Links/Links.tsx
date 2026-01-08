@@ -3,15 +3,14 @@ import styles from './Links.module.scss';
 
 export const Links: Component = () => {
     return (
-        <div id="links" class="text-normal">
+        <div class={styles.links + " text-normal"}>
             <h2 class="text-blue">links</h2>
             <div class={styles.list}>
                 <a href="https://www.twitter.com/foppage">twitter</a>
                 <a href="https://www.github.com/foppage">github</a>
-                <a href="https://ch.tetr.io/u/june">tetr.io</a>
-                <a href="https://zudo.space">wife</a>
+                <a href="https://bsky.app/profile/june.pet">bluesky</a>
+                <a href="https://isabelle.gg">wife</a>
             </div>
-
         </div>
     )
 }
