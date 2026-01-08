@@ -13,6 +13,11 @@ const badges: Badge[] = [
         src: "https://files.june.pet/88x31.png",
         title: "add me to your website if we're chill"
     },
+    { // aspen
+        link: "https://aspen.me.uk",
+        src: "https://aspen.me.uk/88x31.gif",
+        title: "aspen.me.uk"
+    },
     { // annie
         link: "https://versary.town/",
         src: "/badges/versarytown.png",
