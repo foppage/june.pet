@@ -14,9 +14,9 @@ export const Default: ParentComponent = (props) => {
             <div id="content" class="text-normal content">
                 {props.children}
 
-                <hr></hr>
+                {/*<hr></hr>*/}
 
-                <Umami></Umami>
+                {/*<Umami></Umami>*/}
 
             </div>
 
