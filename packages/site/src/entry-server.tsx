@@ -11,6 +11,7 @@ export default createHandler(() => (
           <title>june.pet</title>
           <link rel="icon" href="/favicon.jpg" />
           {assets}
+          <script defer src="https://u.izzy.beer/script.js" data-website-id="f89eefe5-5561-4a64-b1b0-9fd20a7142a7"></script>
         </head>
         <body>
           <div id="app">{children}</div>
