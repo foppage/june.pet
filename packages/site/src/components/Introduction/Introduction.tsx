@@ -10,6 +10,7 @@ export const Introduction: Component = () => {
                 <li>non binary (they/she)</li>
                 <li>software developer</li>
                 <li>guitarist</li>
+                <li>proud yamaha ybr125 owner</li>
                 <li>rental karting enjoyer</li>
                 <li>tetr.io and rocket league enjoyer</li>
                 <li>lead and developer @ <a href="https://lightningarena.com">lightning arena</a></li>
