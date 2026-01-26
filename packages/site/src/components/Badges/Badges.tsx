@@ -43,10 +43,15 @@ const badges: Badge[] = [
         src: "https://maia.crimew.gay/badges/maia.crimew.gay.png",
         title: "maia.crimew.gay"
     },
-    {
+    { // fae
         link: "https://faejr.gay/",
         src: "/badges/faejr.gif",
         title: "faejr.gay"
+    },
+    { // lyn
+        link: "https://lyn.place/",
+        src: "https://lyn.place/cpk/img/badge.gif",
+        title: "lyn.place"
     }
 ]
 
