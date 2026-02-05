@@ -1,0 +1,11 @@
+.image {
+  image-rendering: pixelated
+}
+
+.badge {
+  margin: 0.2em;
+  transition: all 0.1s;
+  &:hover {
+    filter: brightness(70%);
+  }
+}

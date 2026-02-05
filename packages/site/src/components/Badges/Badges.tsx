@@ -1,10 +1,12 @@
 import {Component, For} from "solid-js";
+import {Badge} from "~/components/Badge/Badge";
 import styles from './Badges.module.scss';
 
 type Badge = {
     link: string,
     src: string,
-    title?: string
+    fallbackSrc?: string,
+    title: string
 }
 
 const badges: Badge[] = [
@@ -26,6 +28,7 @@ const badges: Badge[] = [
     { // chloe
         link: "https://sapphic.moe/",
         src: "https://sapphic.moe/buttons/sapphic.png",
+        fallbackSrc: "/badges/sapphic.png",
         title: "sapphic.moe"
     },
     { // wam
@@ -60,9 +63,7 @@ export const Badges: Component = () => {
 
     <For each={badges}>
         {badge =>
-            <a href={badge.link} class={styles.badge}>
-                <img class={styles.image} src={badge.src} width="88" height="31" title={badge.title} alt={"88x31 badge linking to " + badge.link} />
-            </a>
+            <Badge link={badge.link} src={badge.src} fallbackSrc={badge.fallbackSrc} title={badge.title}></Badge>
         }
     </For>
 
