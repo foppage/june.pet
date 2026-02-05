@@ -5,7 +5,7 @@ export const Introduction: Component = () => {
         <div id="introduction">
             <h2 class="text-blue">hello! i am <span class="text-pink">june</span> -</h2>
             <ul>
-                <li>23 years old</li>
+                <li>24 years old</li>
                 <li>british</li>
                 <li>non binary (they/she)</li>
                 <li>software developer</li>
