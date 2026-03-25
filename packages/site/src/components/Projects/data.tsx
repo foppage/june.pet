@@ -21,7 +21,7 @@ export const data: ProjectType[] = [
         "description":"multistream client for tetr.io (implemented websocket server for remote control)",
         "link":"https://github.com/visiblyisabelle/MultiStream",
 
-        "show": true
+        "show": false
     },
     {
         "name":"to be named",
