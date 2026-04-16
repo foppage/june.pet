@@ -61,7 +61,6 @@ const badges: Badge[] = [
         src: "https://aprl.pet/assets/badges/april.png",
         title: "April",
         fallbackSrc: "/badges/april.png",
-
     }
 ]
 

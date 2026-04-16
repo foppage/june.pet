@@ -53,7 +53,7 @@ export const data: ProjectType[] = [
     },
     {
         "name":"private 6 mans",
-        "description":"a verified discord bot for custom matchmaking and lobby creation, designed for rocket league communities. used in over 2000 servers",
+        "description":"a verified discord bot for custom matchmaking and lobby creation, designed for rocket league communities. used in over 4500 servers",
         "link":"https://github.com/foppage/private6mans-2",
         "timeframe":<>26/12/2018 - 26/08/2022 (now maintained by <a href='https://github.com/coolcalcacol'>coolcal</a> and <a href='https://github.com/thebeardedb'>thebeardedb</a>)</>,
         "show": true
