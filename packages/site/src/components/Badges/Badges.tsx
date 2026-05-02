@@ -55,13 +55,13 @@ const badges: Badge[] = [
         link: "https://lyn.place/",
         src: "https://lyn.place/cpk/img/badge.gif",
         title: "lyn.place"
+    },
+    { // april
+        link: "https://aprl.pet/",
+        src: "https://aprl.pet/assets/badges/april.png",
+        title: "April",
+        fallbackSrc: "/badges/april.png",
     }
-    // { // april
-    //     link: "https://aprl.pet/",
-    //     src: "https://aprl.pet/assets/badges/april.png",
-    //     title: "April",
-    //     fallbackSrc: "/badges/april.png",
-    // }
 ]
 
 export const Badges: Component = () => {
