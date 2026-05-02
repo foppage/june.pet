@@ -12,6 +12,7 @@ export default createHandler(() => (
           <link rel="icon" href="/favicon.jpg" />
           {assets}
           <script defer src="https://u.izzy.beer/script.js" data-website-id="f89eefe5-5561-4a64-b1b0-9fd20a7142a7"></script>
+          <script defer src="https://u.izzy.beer/recorder.js" data-website-id="f89eefe5-5561-4a64-b1b0-9fd20a7142a7" data-sample-rate="0.15" data-mask-level="moderate" data-max-duration="300000"></script>
         </head>
         <body>
           <div id="app">{children}</div>
