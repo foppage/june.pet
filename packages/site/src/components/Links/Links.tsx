@@ -9,6 +9,7 @@ export const Links: Component = () => {
                 <a href="https://www.twitter.com/foppage">twitter</a>
                 <a href="https://www.github.com/foppage">github</a>
                 <a href="https://bsky.app/profile/june.pet">bluesky</a>
+                <a href="https://www.last.fm/user/foppage">last.fm</a>
                 <a href="https://isabelle.gg">wife</a>
             </p>
             <p>
