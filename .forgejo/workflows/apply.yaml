@@ -17,7 +17,7 @@ jobs:
         run: |
           mkdir ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ./private.key
-          sudo chmod 600 ./private.key
+          chmod 600 ./private.key
 
       - name: Apply Terraform
         run: ssh -o "StrictHostKeyChecking no" -i ./private.key root@$SERVER_IP "cd ~/june.pet/terraform && git pull && terraform apply -var-file=secret.tfvars -input=false"
