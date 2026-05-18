@@ -18,11 +18,11 @@ resource "cloudflare_zero_trust_tunnel_cloudflared_config" "tunnel_config" {
     ingress = [
       {
         hostname = "june.pet"
-        service  = "http://site:80",
+        service  = "http://${docker_container.site.hostname}:3000",
       },
       {
         hostname = "admin.june.pet"
-        service  = "http://admin:80",
+        service  = "http://${docker_container.admin.hostname}:3000",
       },
       {
         service = "http_status:404"
