@@ -10,13 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: hashicorp/terraform:1.15
-      options: --network=host
     steps:
       - name: Setup Node
         run: apk add nodejs
 
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Go to Terraform Directory
+        run: cd terraform
 
       - name: Terraform Init
         run: terraform init
