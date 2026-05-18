@@ -18,11 +18,11 @@ resource "cloudflare_zero_trust_tunnel_cloudflared_config" "tunnel_config" {
     ingress = [
       {
         hostname = "june.pet"
-        service  = "http://personal-site:80",
+        service  = "http://site:80",
       },
       {
         hostname = "admin.june.pet"
-        service  = "http://personal-admin:80",
+        service  = "http://admin:80",
       },
       {
         service = "http_status:404"

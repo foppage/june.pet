@@ -1,0 +1,31 @@
+name: Terraform Apply
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Terraform Setup
+        uses: hashicorp/setup-terraform@v4
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Apply
+        run: terraform apply -input=false -auto-approve
+        env:
+          TF_VAR_docker_host: ${{ vars.DOCKER_HOST }}
+          TF_VAR_pushover_user: ${{ vars.PUSHOVER_USER }}
+          TF_VAR_pushover_token: ${{ secrets.PUSHOVER_TOKEN }}
+          TF_VAR_cloudflare_account: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          TF_VAR_cloudflare_api_token: ${{ secrets. LOUDFLARE_API_TOKEN }}
+          TF_VAR_cloudflare_zone_id: ${{ vars.CLOUDFLARE_ZONE_ID }}
+          TF_VAR_allowed_email: ${{ vars.ALLOWED_EMAIL }}
