@@ -21,4 +21,4 @@ jobs:
       - name: Apply Terraform
         env:
           SERVER_IP: ${{ vars.SERVER_IP }}
-        run: ssh -o "StrictHostKeyChecking no" -i ./private.key root@$SERVER_IP "cd ~/june.pet/terraform && git pull && terraform apply -var-file=secret.tfvars -input=false"
+        run: ssh -o "StrictHostKeyChecking no" -i ./private.key root@$SERVER_IP "cd ~/june.pet/terraform && git pull && terraform apply -var-file=secret.tfvars -input=false -auto-approve"
