@@ -7,7 +7,11 @@ on:
 
 jobs:
   terraform:
-    runs-on: self-hosted
+    runs-on: docker
+
+    container:
+      image: node:lts # ensure this image is pre-pulled on the runner or replace with a local registry image
+      options: --platform linux/amd64
 
     steps:
       - name: Checkout code
