@@ -17,6 +17,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Add SSH private key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          DOCKER_HOST: ${{ vars.DOCKER_HOST }}
+        run: |
+          mkdir -p /root/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
+          chmod 600 /root/.ssh/id_rsa
+          ssh-keyscan -H $DOCKER_HOST >> /root/.ssh/known_hosts
+
       - name: Terraform Init
         working-directory: terraform
         run: terraform init
