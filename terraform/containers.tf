@@ -1,5 +1,5 @@
 resource "docker_container" "site" {
-  image = docker_image.site.id
+  image = docker_image.site.image_id
   name  = "site"
 
   networks_advanced {
@@ -23,8 +23,8 @@ resource "docker_container" "site" {
 }
 
 resource "docker_container" "admin" {
-  image = docker_image.admin.id
-  name  = "personal-admin"
+  image = docker_image.admin.image_id
+  name  = "admin"
 
   networks_advanced {
     name = docker_network.internal.id

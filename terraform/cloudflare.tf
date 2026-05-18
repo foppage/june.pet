@@ -1,6 +1,6 @@
 resource "cloudflare_zero_trust_tunnel_cloudflared" "tunnel" {
   account_id = var.cloudflare_account
-  name       = "tunnel"
+  name       = "june.pet website"
   config_src = "cloudflare"
 }
 
