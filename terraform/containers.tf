@@ -11,7 +11,7 @@ resource "docker_container" "site" {
   }
 
   depends_on = [
-    docker_container.guestbook_pg.id
+    docker_container.guestbook_pg
   ]
 
   env = [
@@ -35,7 +35,7 @@ resource "docker_container" "admin" {
   }
 
   depends_on = [
-    docker_container.guestbook_pg.id
+    docker_container.guestbook_pg
   ]
 
   env = [
