@@ -8,13 +8,11 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
-
+    container:
+      image: hashicorp/terraform:1.16.0
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Terraform Setup
-        uses: hashicorp/setup-terraform@v4
 
       - name: Terraform Init
         run: terraform init
