@@ -13,9 +13,7 @@ jobs:
       options: --network=host
     steps:
       - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
+        run: apk add nodejs
 
       - name: Checkout code
         uses: actions/checkout@v4
