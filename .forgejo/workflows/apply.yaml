@@ -8,37 +8,16 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
-    container:
-      image: hashicorp/terraform:1.15
+
     steps:
-      - name: Setup Node
-        run: apk add nodejs
-
-      - name: Checkout code
-        uses: actions/checkout@v4
-
       - name: Add SSH private key
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          DOCKER_HOST: ${{ vars.DOCKER_HOST }}
+          SERVER_IP: ${{ vars.SERVER_IP }}
         run: |
-          mkdir -p /root/.ssh
-          printf '%s\n' "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
-          chmod 600 /root/.ssh/id_rsa
-          ssh-keyscan -H $DOCKER_HOST >> /root/.ssh/known_hosts
+          mkdir ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ./private.key
+          sudo chmod 600 ./private.key
 
-      - name: Terraform Init
-        working-directory: terraform
-        run: terraform init
-
-      - name: Terraform Apply
-        working-directory: terraform
-        run: terraform apply -input=false -auto-approve
-        env:
-          TF_VAR_docker_host: ${{ vars.DOCKER_HOST }}
-          TF_VAR_pushover_user: ${{ vars.PUSHOVER_USER }}
-          TF_VAR_pushover_token: ${{ secrets.PUSHOVER_TOKEN }}
-          TF_VAR_cloudflare_account: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
-          TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          TF_VAR_cloudflare_zone_id: ${{ vars.CLOUDFLARE_ZONE_ID }}
-          TF_VAR_allowed_email: ${{ vars.ALLOWED_EMAIL }}
+      - name: Apply Terraform
+        run: ssh -o "StrictHostKeyChecking no" -i ./private.key root@$SERVER_IP "cd ~/june.pet/terraform && git pull && terraform apply -var-file=secret.tfvars -input=false"
