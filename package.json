@@ -10,7 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/june-rl/june.pet-2.git"
   },
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "license": "ISC",
   "author": "",
   "type": "module",
