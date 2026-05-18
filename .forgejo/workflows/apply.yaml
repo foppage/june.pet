@@ -13,14 +13,12 @@ jobs:
       - name: Add SSH private key
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SERVER_IP: ${{ vars.SERVER_IP }}
         run: |
           mkdir ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ./private.key
           chmod 600 ./private.key
 
-      - name: Debugging
-        run: echo $SERVER_IP
-
       - name: Apply Terraform
+        env:
+          SERVER_IP: ${{ vars.SERVER_IP }}
         run: ssh -o "StrictHostKeyChecking no" -i ./private.key root@$SERVER_IP "cd ~/june.pet/terraform && git pull && terraform apply -var-file=secret.tfvars -input=false"
