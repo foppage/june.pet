@@ -7,7 +7,7 @@ on:
 
 jobs:
   terraform:
-    runs-on: docker
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
