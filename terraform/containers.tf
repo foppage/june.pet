@@ -15,7 +15,7 @@ resource "docker_container" "site" {
   ]
 
   env = [
-    "DATABASE_URL=postgres://postgres:postgres@personal-pg:5432/postgres",
+    "DATABASE_URL=postgres://postgres:postgres@${docker_container.guestbook_pg.hostname}:5432/postgres",
     "PUSHOVER_USER=${var.pushover_user}",
     "PUSHOVER_TOKEN=${var.pushover_token}"
   ]
@@ -39,7 +39,7 @@ resource "docker_container" "admin" {
   ]
 
   env = [
-    "DATABASE_URL=postgres://postgres:postgres@guestbook-pg:5432/postgres"
+    "DATABASE_URL=postgres://postgres:postgres@${docker_container.guestbook_pg.hostname}:5432/postgres"
   ]
 
 }

@@ -1,5 +1,8 @@
 FROM node:24-alpine
 
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
+
 WORKDIR /app
 
 COPY ./package*.json ./

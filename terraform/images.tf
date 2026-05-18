@@ -3,6 +3,9 @@ resource "docker_image" "site" {
   build {
     context = ".."
     dockerfile = "./docker/website.Dockerfile"
+    build_args = {
+      DATABASE_URL = "postgres://postgres:postgres@${docker_container.guestbook_pg.hostname}:5432/postgres"
+    }
   }
   triggers = {
     site_sha1 = sha1(join("", [for f in fileset(path.module, "../packages/site/**") : filesha1(f)]))
@@ -15,6 +18,9 @@ resource "docker_image" "admin" {
   build {
     context = ".."
     dockerfile = "./docker/admin.Dockerfile"
+    build_args = {
+      DATABASE_URL = "postgres://postgres:postgres@${docker_container.guestbook_pg.hostname}:5432/postgres"
+    }
   }
   triggers = {
     admin_sha1 = sha1(join("", [for f in fileset(path.module, "../packages/admin/**") : filesha1(f)]))
