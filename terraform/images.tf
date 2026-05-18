@@ -1,9 +1,10 @@
 resource "docker_image" "site" {
   name = "site"
   build {
-    context = ".."
-    dockerfile = "./docker/website.Dockerfile"
-    build_arg = {
+    builder = "default"
+    context = "../"
+    dockerfile = "../docker/website.Dockerfile"
+    build_args = {
       DATABASE_URL: "postgres://postgres:postgres@${docker_container.guestbook_pg.hostname}/postgres"
     }
   }
@@ -16,9 +17,10 @@ resource "docker_image" "site" {
 resource "docker_image" "admin" {
   name = "admin"
   build {
-    context = ".."
-    dockerfile = "./docker/admin.Dockerfile"
-    build_arg = {
+    builder = "default"
+    context = "../"
+    dockerfile = "../docker/admin.Dockerfile"
+    build_args = {
       DATABASE_URL: "postgres://postgres:postgres@${docker_container.guestbook_pg.hostname}/postgres"
     }
   }
