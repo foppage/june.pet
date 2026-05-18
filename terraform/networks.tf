@@ -1,7 +1,7 @@
-resource "docker_network" "personal_external" {
-  name = "personal-external"
+resource "docker_network" "external" {
+  name = "external"
 }
 
-resource "docker_network" "personal_internal" {
-  name = "personal-internal"
+resource "docker_network" "internal" {
+  name = "internal"
 }

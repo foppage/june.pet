@@ -1,6 +1,6 @@
 resource "cloudflare_zero_trust_tunnel_cloudflared" "tunnel" {
   account_id = var.cloudflare_account
-  name       = "personal-tunnel"
+  name       = "tunnel"
   config_src = "cloudflare"
 }
 
@@ -77,10 +77,10 @@ resource "docker_image" "tunnel_image" {
 
 resource "docker_container" "tunnel_container" {
   image = docker_image.tunnel_image.image_id
-  name  = "personal-tunnel"
+  name  = "tunnel"
 
   networks_advanced {
-    name = docker_network.personal_external.id
+    name = docker_network.external.id
   }
 
   command = ["tunnel", "--no-autoupdate", "run", "--token", data.cloudflare_zero_trust_tunnel_cloudflared_token.tunnel_token.token]

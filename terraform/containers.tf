@@ -1,17 +1,17 @@
-resource "docker_container" "personal-site" {
-  image = docker_image.personal_site.id
-  name  = "personal-site"
+resource "docker_container" "site" {
+  image = docker_image.site.id
+  name  = "site"
 
   networks_advanced {
-    name = docker_network.personal_internal.id
+    name = docker_network.internal.id
   }
 
   networks_advanced {
-    name = docker_network.personal_external.id
+    name = docker_network.external.id
   }
 
   depends_on = [
-    docker_container.personal-pg
+    docker_container.guestbook_pg.id
   ]
 
   env = [
@@ -22,31 +22,31 @@ resource "docker_container" "personal-site" {
 
 }
 
-resource "docker_container" "personal-admin" {
-  image = docker_image.personal_admin.id
+resource "docker_container" "admin" {
+  image = docker_image.admin.id
   name  = "personal-admin"
 
   networks_advanced {
-    name = docker_network.personal_internal.id
+    name = docker_network.internal.id
   }
 
   networks_advanced {
-    name = docker_network.personal_external.id
+    name = docker_network.external.id
   }
 
   depends_on = [
-    docker_container.personal-pg
+    docker_container.guestbook_pg.id
   ]
 
   env = [
-    "DATABASE_URL=postgres://postgres:postgres@personal-pg:5432/postgres"
+    "DATABASE_URL=postgres://postgres:postgres@guestbook-pg:5432/postgres"
   ]
 
 }
 
-resource "docker_container" "personal-pg" {
+resource "docker_container" "guestbook_pg" {
   image = docker_image.postgres.image_id
-  name  = "personal-pg"
+  name  = "guestbook-pg"
 
   volumes {
     volume_name = docker_volume.guestbook_data.id
@@ -54,7 +54,7 @@ resource "docker_container" "personal-pg" {
   }
 
   networks_advanced {
-    name = docker_network.personal_internal.id
+    name = docker_network.internal.id
   }
 
   env = [

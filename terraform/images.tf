@@ -1,5 +1,5 @@
-resource "docker_image" "personal_site" {
-  name = "personal-site"
+resource "docker_image" "site" {
+  name = "site"
   build {
     context = ".."
     dockerfile = "./docker/website.Dockerfile"
@@ -10,8 +10,8 @@ resource "docker_image" "personal_site" {
   }
 }
 
-resource "docker_image" "personal_admin" {
-  name = "personal-admin"
+resource "docker_image" "admin" {
+  name = "admin"
   build {
     context = ".."
     dockerfile = "./docker/admin.Dockerfile"

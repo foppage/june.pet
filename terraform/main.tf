@@ -12,7 +12,8 @@ terraform {
 }
 
 provider "docker" {
-
+  host = "ssh://root@${var.docker_host}:22"
+  ssh_opts = ["-o", "StrictHostKeyChecking=no", "-o", "UserKnownHostsFile=/dev/null"]
 }
 
 provider "cloudflare" {

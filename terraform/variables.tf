@@ -1,3 +1,7 @@
+variable "docker_host" {
+  type:string
+}
+
 variable "pushover_user" {
   type = string
 }
