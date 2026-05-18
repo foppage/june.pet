@@ -10,9 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: hashicorp/terraform:1.15
+      options: --network=host
     steps:
-      - name: Install Node
-        run: apk add nodejs
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
 
       - name: Checkout code
         uses: actions/checkout@v4
@@ -27,6 +30,6 @@ jobs:
           TF_VAR_pushover_user: ${{ vars.PUSHOVER_USER }}
           TF_VAR_pushover_token: ${{ secrets.PUSHOVER_TOKEN }}
           TF_VAR_cloudflare_account: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
-          TF_VAR_cloudflare_api_token: ${{ secrets. LOUDFLARE_API_TOKEN }}
+          TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           TF_VAR_cloudflare_zone_id: ${{ vars.CLOUDFLARE_ZONE_ID }}
           TF_VAR_allowed_email: ${{ vars.ALLOWED_EMAIL }}
