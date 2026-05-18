@@ -1,5 +1,5 @@
 variable "docker_host" {
-  type:string
+  type = string
 }
 
 variable "pushover_user" {
