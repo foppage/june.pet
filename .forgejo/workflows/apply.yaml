@@ -9,7 +9,7 @@ jobs:
   terraform:
     runs-on: ubuntu-latest
     container:
-      image: hashicorp/terraform:1.16.0
+      image: hashicorp/terraform:1.15
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
