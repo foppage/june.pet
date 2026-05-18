@@ -1,0 +1,27 @@
+resource "docker_image" "personal_site" {
+  name = "personal-site"
+  build {
+    context = ".."
+    dockerfile = "./docker/website.Dockerfile"
+  }
+  triggers = {
+    site_sha1 = sha1(join("", [for f in fileset(path.module, "../packages/site/**") : filesha1(f)]))
+    shared_sha1 = sha1(join("", [for f in fileset(path.module, "../packages/shared/**") : filesha1(f)]))
+  }
+}
+
+resource "docker_image" "personal_admin" {
+  name = "personal-admin"
+  build {
+    context = ".."
+    dockerfile = "./docker/admin.Dockerfile"
+  }
+  triggers = {
+    admin_sha1 = sha1(join("", [for f in fileset(path.module, "../packages/admin/**") : filesha1(f)]))
+    shared_sha1 = sha1(join("", [for f in fileset(path.module, "../packages/shared/**") : filesha1(f)]))
+  }
+}
+
+resource "docker_image" "postgres" {
+  name = "postgres:latest"
+}
