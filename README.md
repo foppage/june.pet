@@ -1,5 +1,3 @@
-wanted to give solidstart a try. 
-
-also wanted to add a guestbook to my site.
-
-fed two birds with one scone
+- Website and admin panel made using SolidStart
+- Infrastructure defined by Terraform (Docker and Cloudflare Zero Trust)
+- Forgejo Actions CI/CD
