@@ -15,6 +15,7 @@ export const Links: Component = () => {
             <p>
                 email/xmpp: me@june.pet
             </p>
+            <p>hire me: <a href={"https://pleaseletme.work"}>pleaseletme.work</a></p>
         </div>
     )
 }
