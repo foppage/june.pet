@@ -61,7 +61,13 @@ const badges: Badge[] = [
         src: "https://aprl.pet/assets/badges/april.png",
         title: "April",
         fallbackSrc: "/badges/april.png",
+    },
+    { //opale
+        link: "https://n1ark.com",
+        src: "https://n1ark.com/banner.gif",
+        title: "Opale"
     }
+
 ]
 
 export const Badges: Component = () => {
