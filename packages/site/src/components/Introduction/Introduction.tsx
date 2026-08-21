@@ -6,11 +6,10 @@ export const Introduction: Component = () => {
             <h2 class="text-blue">hello! i am <span class="text-pink">june</span> -</h2>
             <ul>
                 <li>24 years old</li>
-                <li>british</li>
+                <li>british (escaped to switzerland!)</li>
                 <li>non binary (they/she)</li>
-                <li>software developer</li>
+                <li>software and devops engineer</li>
                 <li>guitarist</li>
-                <li>proud yamaha ybr125 owner</li>
                 <li>rental karting enjoyer</li>
                 <li>tetr.io and rocket league enjoyer</li>
                 <li>lead and developer @ <a href="https://lightningarena.com">lightning arena</a></li>
