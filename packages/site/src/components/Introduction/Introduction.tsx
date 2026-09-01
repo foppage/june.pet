@@ -8,7 +8,7 @@ export const Introduction: Component = () => {
                 <li>24 years old</li>
                 <li>british (escaped to switzerland!)</li>
                 <li>non binary (they/she)</li>
-                <li>software and devops engineer</li>
+                <li>software and devops engineer @ cern</li>
                 <li>guitarist</li>
                 <li>rental karting enjoyer</li>
                 <li>tetr.io and rocket league enjoyer</li>
