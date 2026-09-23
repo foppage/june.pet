@@ -54,6 +54,7 @@ const badges: Badge[] = [
     { // lyn
         link: "https://lyn.place/",
         src: "https://lyn.place/cpk/img/badge.gif",
+        fallbackSrc: "/badges/lyn.gif",
         title: "lyn.place"
     },
     { // april
